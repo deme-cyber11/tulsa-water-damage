@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deme-cyber11.github.io/tulsa-water-damage/sitemap.xml
