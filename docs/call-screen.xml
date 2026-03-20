@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Gather numDigits="1" action="https://tulsawaterdamagepros.com/call-forward.xml" method="GET" timeout="8">
+    <Say>Thank you for calling Tulsa Water Damage Pros. To speak with our team, please press 1.</Say>
+  </Gather>
+  <Say>We didn't receive a response. If you need assistance, please call back and press 1 when prompted. Goodbye.</Say>
+  <Hangup/>
+</Response>

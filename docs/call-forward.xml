@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Connecting you now. Please hold.</Say>
+  <Dial callerId="+19187232096" timeout="30">
+    <Number>+17344761457</Number>
+  </Dial>
+  <Say>We're sorry, no one is available right now. Please try again later.</Say>
+  <Hangup/>
+</Response>
