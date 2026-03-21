@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Core Pages -->
   <url><loc>https://tulsawaterdamagepros.com/</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/about.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/contact.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/faq.html</loc><lastmod>2026-03-21</lastmod></url>
-
-  <!-- Service Pages -->
   <url><loc>https://tulsawaterdamagepros.com/services/water-extraction.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/services/flood-cleanup.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/services/sewage-cleanup.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/services/storm-damage.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/services/mold-prevention.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/services/structural-drying.html</loc><lastmod>2026-03-21</lastmod></url>
-
-  <!-- Location Pages -->
   <url><loc>https://tulsawaterdamagepros.com/locations/midtown-tulsa.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/locations/south-tulsa.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/locations/broken-arrow.html</loc><lastmod>2026-03-21</lastmod></url>
@@ -24,10 +18,7 @@
   <url><loc>https://tulsawaterdamagepros.com/locations/sand-springs.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/locations/owasso.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/locations/sapulpa.html</loc><lastmod>2026-03-21</lastmod></url>
-
-  <!-- Blog Posts -->
   <url><loc>https://tulsawaterdamagepros.com/blog/what-to-do-water-damage.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/blog/tulsa-storm-season-water-damage.html</loc><lastmod>2026-03-21</lastmod></url>
   <url><loc>https://tulsawaterdamagepros.com/blog/insurance-claims-water-damage-tulsa.html</loc><lastmod>2026-03-21</lastmod></url>
-
 </urlset>
