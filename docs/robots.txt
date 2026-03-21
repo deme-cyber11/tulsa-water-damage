@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deme-cyber11.github.io/tulsa-water-damage/sitemap.xml
+Sitemap: https://tulsawaterdamagepros.com/sitemap.xml
