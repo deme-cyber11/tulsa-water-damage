@@ -58,6 +58,20 @@
     .breadcrumb a {color:#1a3a5c;text-decoration:none}
     @media(max-width:640px){.location-hero h1{font-size:1.5rem}.hero-phone{font-size:1.1rem;padding:14px 24px}}
   </style>
+<style>
+
+/* Floating CTA circles — injected by cta-strategy.py */
+.floating-cta{position:fixed;bottom:20px;right:20px;z-index:998;display:flex;flex-direction:column;gap:12px;transform:translateY(110px);opacity:0;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .4s ease;pointer-events:none}
+.floating-cta.visible{transform:translateY(0);opacity:1;pointer-events:auto}
+.floating-cta a{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;color:#fff;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .2s ease,box-shadow .2s ease;position:relative}
+.floating-cta a:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.fcta-call{background:#22c55e}
+.fcta-quote{background:var(--color-primary,var(--color-accent,#1a3a5c))}
+.fcta-label{position:absolute;right:64px;white-space:nowrap;background:rgba(0,0,0,.75);color:#fff;padding:5px 12px;border-radius:20px;font-size:.78rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.floating-cta a:hover .fcta-label{opacity:1}
+@media(min-width:769px){.floating-cta{display:none!important}}
+
+</style>
 </head>
 <body>
   <header><nav><a href="/">Tulsa Water Damage Pros</a><a href="tel:+19187232096">(918) 723-2096</a></nav></header>
@@ -111,5 +125,19 @@
     </section>
   </main>
   <footer><p>&copy; 2026 Tulsa Water Damage Pros. Serving Tulsa and surrounding Oklahoma communities 24/7.</p></footer>
+
+<div class="floating-cta" id="floating-cta">
+  <a href="tel:+19187232096" class="fcta-call" aria-label="Call Now"><span class="fcta-label">Call Now</span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></a>
+  <a href="/contact.html" class="fcta-quote" aria-label="Free Quote"><span class="fcta-label">Free Quote</span><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></a>
+</div>
+<script>
+(function(){
+  var el=document.getElementById('floating-cta');
+  if(!el)return;
+  window.addEventListener('scroll',function(){
+    el.classList.toggle('visible',window.scrollY>80);
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
