@@ -1122,3 +1122,30 @@ footer {
         padding: 12px 16px;
     }
 }
+
+
+/* ── Mobile Grid Fix (auto-applied 2026-03-25) ── */
+.trust-bar .container,
+.trust-bar-inner,
+.trust-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .trust-bar .container,
+  .trust-bar-inner,
+  .trust-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .trust-bar .container,
+  .trust-bar-inner,
+  .trust-items {
+    grid-template-columns: repeat(6, auto);
+    justify-content: center;
+  }
+}
