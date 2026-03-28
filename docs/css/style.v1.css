@@ -1149,3 +1149,25 @@ footer {
     justify-content: center;
   }
 }
+
+/* ── Wordmark logo (logo-gen.py) ──────────────────────────── */
+.nav-logo-icon,
+.site-logo__icon,
+.logo-icon {
+  font-family: var(--font-display, 'sans-serif') !important;
+  font-size: 1.3rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1 !important;
+  color: #fff !important;
+}
+.nav-logo-icon svg,
+.site-logo__icon svg { display: none; }
+.nav-logo-text .logo-brand,
+.site-logo__name .logo-brand,
+.logo .logo-brand {
+  color: var(--color-accent, #e94560);
+  font-weight: 900;
+  font-style: normal;
+}
+/* END LOGO-GEN */
