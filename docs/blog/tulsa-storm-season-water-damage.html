@@ -19,7 +19,9 @@
   <meta name="twitter:title" content="Preparing Your Tulsa Home for Oklahoma Storm Season">
   <meta name="twitter:description" content="Oklahoma storm prep for Tulsa homeowners.">
   <meta name="twitter:image" content="https://tulsawaterdamagepros.com/images/blog-oklahoma-storm.jpg">
-  <link rel="stylesheet" href="../css/style.v1.css">
+  <link rel="stylesheet" href="/css/style.v1.css">
+  <link rel="stylesheet" href="/css/style.v2.5.css">
+  <link rel="stylesheet" href="/css/site-theme.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,6 +63,7 @@
 @media(min-width:769px){.floating-cta{display:none!important}}
 
 </style>
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
 <div class="emergency-bar">
@@ -70,12 +73,12 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="../images/icons/droplets.svg" alt="" class="logo-icon" width="48" height="48">
+      <img src="/images/icons/droplets.svg" alt="" class="logo-icon" width="48" height="48">
       Tulsa Water Damage <span class="red">Pros</span>
     </a>
     <nav>
       <div class="nav-dropdown">
-        <span class="nav-link nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Services</span>
+        <span class="nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Services</span>
         <div class="nav-dropdown-menu">
           <a href="/services/water-extraction.html">Water Extraction</a>
           <a href="/services/flood-cleanup.html">Flood Cleanup</a>
@@ -86,7 +89,7 @@
         </div>
       </div>
       <div class="nav-dropdown">
-        <span class="nav-link nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Areas Served</span>
+        <span class="nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Areas Served</span>
         <div class="nav-dropdown-menu">
           <a href="/locations/midtown-tulsa.html">Midtown Tulsa</a>
           <a href="/locations/south-tulsa.html">South Tulsa</a>
@@ -95,11 +98,11 @@
           <a href="/locations/owasso.html">Owasso</a>
         </div>
       </div>
-      <a href="/about.html" class="nav-link">About</a>
-      <a href="/faq.html" class="nav-link">FAQ</a>
-      <a href="/blog/" class="nav-link">Blog</a>
-      <a href="tel:+19187232096" class="nav-link nav-phone">
-        <img src="../images/icons/phone.svg" alt="" width="48" height="48"> (918) 723-2096
+      <a href="/about.html" >About</a>
+      <a href="/faq.html" >FAQ</a>
+      <a href="/blog/" >Blog</a>
+      <a href="tel:+19187232096" class="nav-phone">
+        <img src="/images/icons/phone.svg" alt="" width="48" height="48"> (918) 723-2096
       </a>
     </nav>
     <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open'); this.classList.toggle('active')" aria-label="Toggle navigation">
@@ -131,7 +134,7 @@
 <section class="section section-light">
   <div class="container">
     <div class="content-wrap">
-      <img src="../images/blog-oklahoma-storm.jpg" alt="Oklahoma spring storm approaching Tulsa Green Country" class="service-img" width="800" height="300" loading="eager">
+      <img src="/images/blog-oklahoma-storm.jpg" alt="Oklahoma spring storm approaching Tulsa Green Country" class="service-img" width="800" height="300" loading="eager">
 
       <p>Living in Green Country means living with severe weather. Tulsa and the surrounding metro area — Broken Arrow, Owasso, Jenks, Sand Springs — sit in one of the most active storm corridors in the United States. Every spring, supercell thunderstorms march across eastern Oklahoma, bringing tornado warnings, baseball-sized hail, and rainfall events that can dump 3–5 inches in a matter of hours.</p>
       <p>The good news: most storm-related water damage is preventable with the right preparation. Here's what Tulsa homeowners should do before storm season arrives.</p>
@@ -181,11 +184,11 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo" style="display:inline-flex;margin-bottom:12px">
-        <img src="../images/icons/droplets.svg" alt="" class="logo-icon" width="48" height="48">
+        <img src="/images/icons/droplets.svg" alt="" class="logo-icon" width="48" height="48">
         Tulsa Water Damage <span class="red">Pros</span>
       </a>
       <p>Tulsa's 24/7 emergency water damage restoration company. IICRC certified technicians, all insurance accepted.</p>
-      <a href="tel:+19187232096" class="footer-phone"><img src="../images/icons/phone.svg" alt="" width="48" height="48"> (918) 723-2096</a>
+      <a href="tel:+19187232096" class="footer-phone"><img src="/images/icons/phone.svg" alt="" width="48" height="48"> (918) 723-2096</a>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
@@ -251,6 +254,17 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>

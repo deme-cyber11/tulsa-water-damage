@@ -24,6 +24,8 @@
   <meta name="twitter:description" content="Water damage emergency in Tulsa? We respond in 60 minutes. IICRC certified, all insurance accepted.">
   <meta name="twitter:image" content="https://tulsawaterdamagepros.com/images/og-home.jpg">
   <link rel="stylesheet" href="css/style.v1.css">
+  <link rel="stylesheet" href="css/style.v2.5.css">
+  <link rel="stylesheet" href="css/site-theme.css">
   <!-- Schema: LocalBusiness + EmergencyService -->
   <script type="application/ld+json">
   {
@@ -177,6 +179,8 @@
     })(window, document, "clarity", "script", "vqcayp4gny");
   </script>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1a1a2e">
+<script defer src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 </head>
 <body>
 
@@ -195,7 +199,7 @@
     </a>
     <nav>
       <div class="nav-dropdown">
-        <span class="nav-link nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Services</span>
+        <span class="nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Services</span>
         <div class="nav-dropdown-menu">
           <a href="/services/water-extraction.html">Water Extraction</a>
           <a href="/services/flood-cleanup.html">Flood Cleanup</a>
@@ -206,7 +210,7 @@
         </div>
       </div>
       <div class="nav-dropdown">
-        <span class="nav-link nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Areas Served</span>
+        <span class="nav-dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Areas Served</span>
         <div class="nav-dropdown-menu">
           <a href="/locations/midtown-tulsa.html">Midtown Tulsa</a>
           <a href="/locations/south-tulsa.html">South Tulsa</a>
@@ -215,10 +219,10 @@
           <a href="/locations/owasso.html">Owasso</a>
         </div>
       </div>
-      <a href="/about.html" class="nav-link">About</a>
-      <a href="/faq.html" class="nav-link">FAQ</a>
-      <a href="/blog/" class="nav-link">Blog</a>
-      <a href="tel:+19187232096" class="nav-link nav-phone">
+      <a href="/about.html" >About</a>
+      <a href="/faq.html" >FAQ</a>
+      <a href="/blog/" >Blog</a>
+      <a href="tel:+19187232096" class="nav-phone">
         <img src="/images/icons/phone.svg" alt="" width="48" height="48"> (918) 723-2096
       </a>
     </nav>
@@ -240,8 +244,8 @@
     <a href="/locations/owasso.html">Owasso</a>
     <a href="/about.html">About Us</a>
     <a href="/faq.html">FAQ</a>
-    <a href="/contact.html">Contact</a>
-    <a href="tel:+19187232096" class="mobile-phone-btn">📞 Call (918) 723-2096</a>
+    <a href="/contact.html#contact">Contact</a>
+    <a href="tel:+19187232096" class="mobile-phone-btn"><i class="ph ph-phone"></i> Call (918) 723-2096</a>
   </div>
 </header>
 
@@ -259,7 +263,7 @@
         <a href="tel:+19187232096" class="btn-emergency">
           <img src="/images/icons/phone.svg" alt="" width="48" height="48"> Call (918) 723-2096
         </a>
-        <a href="/contact.html" class="btn-secondary">
+        <a href="/contact.html#contact" class="btn-secondary">
           <img src="/images/icons/message-square.svg" alt="" width="48" height="48"> Free Assessment
         </a>
       </div>
@@ -776,7 +780,7 @@
       <ul>
         <li><a href="/about.html">About Us</a></li>
         <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html#contact">Contact</a></li>
         <li><a href="/blog/">Blog</a></li>
         <li><a href="sitemap.xml">Sitemap</a></li>
       </ul>
@@ -795,7 +799,7 @@
     <img src="/images/icons/phone.svg" alt="" width="48" height="48"> CALL NOW — (918) 723-2096 — 24/7 EMERGENCY
   </a>
 
-        <a href="/contact.html" class="mobile-cta-quote" style="background:#10b981;color:#fff;flex:1;text-align:center;padding:13px 8px;border-radius:6px;font-weight:600;font-size:.9rem;text-decoration:none;">🗓 Free Quote</a></div>
+        <a href="/contact.html#contact" class="mobile-cta-quote" style="background:#10b981;color:#fff;flex:1;text-align:center;padding:13px 8px;border-radius:6px;font-weight:600;font-size:.9rem;text-decoration:none;"><i class="ph ph-calendar"></i> Free Quote</a></div>
 
 <script>
 // FAQ accordion (for if used on page)
@@ -807,6 +811,17 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     if (!isOpen) item.classList.add('open');
   });
 });
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>

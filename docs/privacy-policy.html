@@ -41,6 +41,8 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/style.v2.5.css">
+  <link rel="stylesheet" href="/css/site-theme.css">
     <!-- Animation Libraries CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -335,6 +337,17 @@
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>

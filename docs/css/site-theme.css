@@ -1,0 +1,34 @@
+/* site-specific overrides for v2.5 */
+:root {
+  --color-accent:      #dc2626;
+  --color-accent-dark: #b91c1c;
+  --color-accent-glow: rgba(220, 38, 38, 0.3);
+  --font-display:      'Inter', system-ui, sans-serif;
+}
+
+/* Fixed header clearance */
+.page-hero    { padding-top: 7rem; padding-bottom: 3rem; }
+.service-hero { padding-top: 7rem; }
+@media (max-width: 768px) {
+  .page-hero    { padding-top: 6rem; padding-bottom: 2.5rem; }
+  .service-hero { padding-top: 6rem; }
+}
+
+/* Mobile contact grid */
+@media (max-width: 640px) {
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .contact-info-card,
+  .contact-info-column,
+  .contact-form-column { min-width: 0; max-width: 100%; }
+}
+
+/* Scrollable wide tables */
+main table, .content-container table, .content-section table, .blog-article-content table {
+  display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+
+/* Restore list padding */
+.svc-section ul, .loc-section ul, .blog-article-content ul,
+.content-section ul, .calc-content ul, .faq-item ul { padding-left: 1.6rem; }
+.svc-section li, .loc-section li, .blog-article-content li,
+.content-section li, .calc-content li { margin-bottom: 0.4rem; }

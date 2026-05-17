@@ -63,6 +63,8 @@
   </script>
 
   <link rel="stylesheet" href="../assets/css/style.v1.css">
+  <link rel="stylesheet" href="/css/style.v2.5.css">
+  <link rel="stylesheet" href="/css/site-theme.css">
   <style>
     .location-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%); color: white; padding: 60px 20px; text-align: center; }
     .location-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
@@ -95,6 +97,7 @@
 .floating-cta a:hover .fcta-label{opacity:1}
 @media(min-width:769px){.floating-cta{display:none!important}}
 </style>
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
   <header><nav><a href="/">Tulsa Water Damage Pros</a><a href="tel:+19187232096">(918) 723-2096</a></nav></header>
@@ -112,7 +115,7 @@
     <p>Flash flooding from an Oklahoma supercell. A burst pipe when temperatures drop. An appliance failure — refrigerator ice maker line, water heater, washing machine. These are not situations where you wait and see. Every hour water stays in your South Tulsa home, it works deeper into flooring, walls, and structural materials. Mold begins colonizing wet organic surfaces within 24–48 hours. The cost to fix it grows with every hour you delay.</p>
     <p>If water is in your home right now, call <strong>(918) 723-2096</strong>. We're on-site in South Tulsa within 30–45 minutes. If you're researching after a recent event, here's what you need to know.</p>
 
-<img src="../images/loc-south-tulsa.jpg" alt="Water damage restoration in South Tulsa, OK" loading="eager" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
+<img src="/images/loc-south-tulsa.jpg" alt="Water damage restoration in South Tulsa, OK" loading="eager" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
     <h2>What Every Hour of Delay Costs</h2>
     <ul>
@@ -130,7 +133,7 @@
     <p><strong>Mold clearance</strong> — tested before reconstruction. Every affected cavity verified before new drywall goes up.</p>
     <p><strong>Reconstruction</strong> — drywall, flooring, insulation, paint. One company, start to finish.</p>
 
-<img src="../images/service-structural-drying.jpg" alt="Structural drying equipment — South Tulsa, OK" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
+<img src="/images/service-structural-drying.jpg" alt="Structural drying equipment — South Tulsa, OK" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
     <h2>What Water Damage Restoration Costs in South Tulsa</h2>
     <p><strong>Water extraction and emergency drying:</strong> $1,500–$5,000 depending on area affected<br>
@@ -188,6 +191,17 @@
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>

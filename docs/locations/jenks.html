@@ -63,6 +63,8 @@
   </script>
 
   <link rel="stylesheet" href="../assets/css/style.v1.css">
+  <link rel="stylesheet" href="/css/style.v2.5.css">
+  <link rel="stylesheet" href="/css/site-theme.css">
   <style>
     .location-hero { background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%); color: white; padding: 60px 20px; text-align: center; }
     .location-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
@@ -95,6 +97,7 @@
 .floating-cta a:hover .fcta-label{opacity:1}
 @media(min-width:769px){.floating-cta{display:none!important}}
 </style>
+    <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
   <header><nav><a href="/">Tulsa Water Damage Pros</a><a href="tel:+19187232096">(918) 723-2096</a></nav></header>
@@ -112,7 +115,7 @@
     <p>A burst pipe. Arkansas River flooding pushing into your basement. Sewage backup during a spring storm surge. These are not situations where you wait and see. Every hour water stays in your Jenks home, it penetrates deeper into flooring, walls, and structural materials. Mold begins colonizing wet organic surfaces within 24–48 hours. What's a manageable drying job at hour one is a mold remediation project by hour 48.</p>
     <p>If water is in your home right now, call <strong>(918) 723-2096</strong>. We're on-site in Jenks within 60 minutes. If you're researching after a recent event, here's what you need to know.</p>
 
-<img src="../images/loc-jenks.jpg" alt="Water damage restoration in Jenks, OK" loading="eager" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
+<img src="/images/loc-jenks.jpg" alt="Water damage restoration in Jenks, OK" loading="eager" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
     <h2>What Every Hour of Delay Costs</h2>
     <ul>
@@ -130,7 +133,7 @@
     <p><strong>Mold clearance</strong> — tested before reconstruction begins. Every affected cavity cleared and verified before new drywall goes up.</p>
     <p><strong>Reconstruction</strong> — drywall, flooring, insulation, paint. One company, start to finish.</p>
 
-<img src="../images/service-structural-drying.jpg" alt="Structural drying equipment — Jenks, OK" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
+<img src="/images/service-structural-drying.jpg" alt="Structural drying equipment — Jenks, OK" loading="lazy" style="width:100%;height:auto;border-radius:8px;margin:24px 0;display:block;" width="800" height="533">
 
     <h2>What Water Damage Restoration Costs in Jenks</h2>
     <p><strong>Water extraction and emergency drying:</strong> $1,500–$5,000 depending on area affected<br>
@@ -188,6 +191,17 @@
   window.addEventListener('scroll',function(){
     el.classList.toggle('visible',window.scrollY>80);
   },{passive:true});
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
