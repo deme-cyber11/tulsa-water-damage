@@ -157,22 +157,24 @@
       <div class="contact-form-wrap">
         <h2>Request Emergency Service</h2>
         <p style="margin-bottom:20px;color:var(--text-mid)">We respond to Tulsa-area water damage 24/7. Fill out the form and we'll call you back within minutes.</p>
-        <form action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST">
+        <div id="form-success" style="display:none;background:#ecfdf5;border:1.5px solid #10b981;border-radius:10px;padding:20px;color:#065f46;margin-bottom:16px" role="status" aria-live="polite"><strong>Thanks — we got your request.</strong><br>We'll reach out shortly. Need us sooner? Call <a href="tel:9187232096">(918) 723-2096</a>.</div>
+<div id="form-error" style="display:none;background:#fef2f2;border:1.5px solid #ef4444;border-radius:10px;padding:20px;color:#7f1d1d;margin-bottom:16px" role="alert" aria-live="assertive"></div>
+        <form action="https://lead-manager-api.irontigerdigital.workers.dev/ingest" method="POST" id="lead-form" data-success="form-success" data-error="form-error" data-strict="false" data-fallback-tel="(918) 723-2096">
           <input type="hidden" name="site_domain" value="tulsawaterdamagepros.com">
           <input type="hidden" name="_subject" value="New Lead — Tulsa Water Damage Pros">
-          <input type="hidden" name="_redirect" value="https://tulsawaterdamagepros.com/contact.html#sent">
+          <input type="hidden" name="_redirect" value="https://tulsawaterdamagepros.com/contact.html#success">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required placeholder="John Smith">
+            <input type="text" id="name" name="name" required placeholder="John Smith" autocomplete="name" maxlength="80">
           </div>
           <div class="form-group">
             <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="(918) 723-2096">
+            <input type="tel" id="phone" name="phone" required placeholder="(918) 723-2096" autocomplete="tel" inputmode="tel" maxlength="20" pattern="\+?1?[\s.\-]?\(?[0-9]{3}\)?[\s.\-]?[0-9]{3}[\s.\-]?[0-9]{4}" title="10-digit US phone number, e.g. (555) 123-4567">
           </div>
           <div class="form-group">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" required placeholder="you@example.com">
+            <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" maxlength="120">
           </div>
           <div class="form-group">
             <label for="service">Type of Damage *</label>
@@ -187,12 +189,28 @@
             </select>
           </div>
           <div class="form-group">
+            <label for="timeline">How Soon Do You Need This? *</label>
+            <select id="timeline" name="timeline" required><option value="" disabled selected>Select one…</option><option>Emergency — today</option><option>ASAP — within a few days</option><option>Within 2 weeks</option><option>Within 1 month</option><option>1–3 months</option><option>Flexible / gathering quotes</option></select>
+          </div>
+          <div class="form-group">
             <label for="address">Property Address *</label>
-            <input type="text" id="address" name="address" required placeholder="123 Main St, Tulsa, OK">
+            <input type="text" id="address" name="address" required placeholder="123 Main St, Tulsa, OK" autocomplete="address-line1" maxlength="120">
+          </div>
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" required autocomplete="address-level2" maxlength="60">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" autocomplete="address-level1" maxlength="2" pattern="[A-Za-z]{2}" title="2-letter state code">
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP Code *</label>
+            <input type="text" id="zip" name="zip" required autocomplete="postal-code" inputmode="numeric" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="5-digit ZIP">
           </div>
           <div class="form-group">
             <label for="message">Describe the Situation</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us what happened and how long the water has been present..."></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what happened and how long the water has been present..." required minlength="10" maxlength="2000"></textarea>
           </div>
           <button type="submit" class="btn-emergency" style="width:100%;justify-content:center">
             <img src="/images/icons/zap.svg" alt="" width="24" height="24"> Get Emergency Help
@@ -326,5 +344,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   document.querySelectorAll('.reveal,.feature-card,.service-card,.why__item,.process__card,.testimonial-card,.area-card').forEach(function(el){ io.observe(el); });
 })();
 </script>
+<script src="/js/form.js" defer></script>
 </body>
 </html>
