@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Job referral</title>
+<!-- Iron Tiger Digital job referral page. Deployed to every shop-out site by
+     tools/deploy-job-page.py. Loads the censored job sheet for ?t=<token>
+     from the lead worker, so the link a contractor gets is on this site's own
+     domain. Contact details stay masked until the job is claimed. -->
+</head>
+<body style="margin:0;background:#f5f3f0">
+<div id="job" style="font:16px/1.5 system-ui,-apple-system,sans-serif;color:#5b636b;max-width:640px;margin:0 auto;padding:40px 16px">Loading job details…</div>
+<script>
+(function () {
+  var t = (new URLSearchParams(location.search).get('t') || '').replace(/[^a-z0-9]/gi, '');
+  var el = document.getElementById('job');
+  if (!t) { el.textContent = 'This job link is incomplete. Call (225) 535-4918 and we will sort it out.'; return; }
+  fetch('https://lead-manager-api.irontigerdigital.workers.dev/jobsheet/' + t + '?embed=1')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function (html) {
+      el.removeAttribute('style'); el.innerHTML = html;
+      var h = el.querySelector('h1'); if (h) document.title = 'Job referral: ' + h.textContent;
+    })
+    .catch(function () { el.textContent = 'This job is no longer available or has already been claimed. Questions? Call (225) 535-4918.'; });
+})();
+</script>
+</body>
+</html>
